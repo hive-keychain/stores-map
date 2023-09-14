@@ -1,0 +1,24 @@
+
+.map-container {
+  flex:1;
+width:100%;
+}
+
+.mapboxgl-popup-content{
+  padding:0px!important;
+  background: none!important;
+}
+
+a{
+  /* text-decoration: none; */
+  color: black;
+}
+
+svg{
+  margin-right: 5px;
+}
+
+.App {
+  display:flex;
+  flex-direction: column;
+}
