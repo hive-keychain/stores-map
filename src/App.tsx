@@ -85,7 +85,7 @@ const App = () => {
       //You can adjust the values of the popup to match the headers of your CSV.
       // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
       var description = ReactDOMServer.renderToString(
-        <Card>
+        <Card style={{ width: 260 }}>
           <Card.Img variant="top" src={image_link} />
           <Card.Body style={{ padding: 10 }}>
             <Card.Title>{name}</Card.Title>
@@ -102,15 +102,29 @@ const App = () => {
                 padding: 0,
               }}
             >
-              <span>
-                <BiWorld />
-                <Card.Link href={website}>Website</Card.Link>
-              </span>
-              <span>
-                <MdPhone />
-                <Card.Link href={phone}>{phone}</Card.Link>
-              </span>
-              <Badge bg="secondary">{type}</Badge>
+              <Container
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  padding: 0,
+                }}
+              >
+                <span>
+                  {phone && <MdPhone />}
+                  <Card.Link href={phone}>{phone}</Card.Link>
+                </span>{" "}
+                <span>
+                  <BiWorld />
+                  <Card.Link href={website}>Website</Card.Link>
+                </span>
+              </Container>
+              <Badge
+                style={{ maxWidth: 140, height: 20, alignSelf: "flex-end" }}
+                bg="secondary"
+              >
+                {type}
+              </Badge>
             </Container>
           </Card.Body>
         </Card>
